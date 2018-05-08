@@ -11,7 +11,6 @@ class Products extends Component {
   render() {
     let productsData
   	let searchKey = this.props.searchProduct
-    let s
 
     function searchFor(search){
       return s => {
@@ -29,9 +28,7 @@ class Products extends Component {
 		)
     let view;
 
-		if(productsData.length <= 0 && !searchKey){
-			view = `Loading...`
-		} else if(productsData.length <= 0){
+		if(productsData.length <= 0){
 			view = <NoResult />
 		} else{
 			view = productsData
