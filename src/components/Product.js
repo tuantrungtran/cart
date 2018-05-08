@@ -27,9 +27,9 @@ class Product extends Component {
     })
   }
 
-  updateQuantity() {
+  updateQuantity(value) {
     this.setState(prevState => ({
-      quantity: Number(prevState.quantity) + 1
+      quantity: Number(value)
     }))
   }
 

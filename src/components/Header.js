@@ -24,7 +24,7 @@ class Header extends Component{
 
     handleClickOutside(event) {
         const cartNode = findDOMNode(this.refs.cartPreview);
-        const buttonNode = findDOMNode(this.refs.cartButton);
+        // const buttonNode = findDOMNode(this.refs.cartButton);
         if(cartNode.classList.contains('active')){
             if (!cartNode || !cartNode.contains(event.target)){
                 this.setState({
@@ -45,7 +45,7 @@ class Header extends Component{
       cartItems = this.state.cart.map(product =>{
 			return(
 				<li className="cart-item" key={product.name}>
-            <img className="product-image" src={product.image} />
+            <img className="product-image" src={product.image} alt="" />
             <div className="product-info">
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{product.price}</p>
@@ -54,7 +54,7 @@ class Header extends Component{
                 <p className="quantity">{product.quantity} {product.quantity > 1 ?"Nos." : "No." } </p>
                 <p className="amount">{product.quantity * product.price}</p>
             </div>
-            <a onClick={this.props.removeProduct.bind(this, product.id)} className="product-remove" href="#">×</a>
+            <a onClick={this.props.removeProduct.bind(this, product.id)} className="product-remove" href="">×</a>
         </li>
 			)
 		});
@@ -75,11 +75,10 @@ class Header extends Component{
                     </div>
 
                     <div className="search">
-                        <a className="mobile-search" href="#" ><img src="https://res.cloudinary.com/sivadass/image/upload/v1494756966/icons/search-green.png" alt="search"/></a>
                         <form action="#" method="get" className="search-form">
-                            <a className="back-button" href="#" ><img src="https://res.cloudinary.com/sivadass/image/upload/v1494756030/icons/back.png" alt="back"/></a>
-                            <input type="search" ref="searchBox" placeholder="Search for Pizza" className="search-keyword" />
-                            <button className="search-button" type="submit"></button>
+                              <input type="search" ref="searchBox" placeholder="Search for Pizza"
+                                onChange={this.props.handleSearch} className="search-keyword" />
+                              <button className="search-button" type="submit"></button>
                         </form>
                     </div>
 

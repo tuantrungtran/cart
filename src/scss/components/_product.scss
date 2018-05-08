@@ -79,13 +79,13 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         &:hover{
-            color: $primary-green;
-            border-color: $primary-green;
+            color: $primary-red;
+            border-color: $primary-red;
         }
         &:active{
             color: $white;
-            border-color: $primary-green;
-            background: lighten($primary-green, 15%);
+            border-color: $primary-red;
+            background: lighten($primary-red, 15%);
         }
     }
     .quantity{
@@ -97,7 +97,7 @@
         border: 1px solid $gray-eighty;
         &:focus{
             outline: none;
-            border-color: $primary-green;
+            border-color: $primary-red;
         }
     }
 }

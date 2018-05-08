@@ -24,19 +24,10 @@ header{
         padding: 8px 12px;
     }
 }
-@keyframes slideUp{
-    0% {
-        transform: translateY(30px);
-        opacity: .5;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+
 // Logo
 .brand .logo{
-    width: 123px;
+    width: 50px;
     @media (max-width: 480px){
         width: 102px;
         margin: 2px 0;
@@ -76,7 +67,7 @@ header{
     }
     .search-keyword{
         height: 36px;
-        border: 1px solid $primary-green;
+        border: 1px solid $primary-red;
         padding: 0 16px;
         border-radius: 2px 0 0 2px;
         width: 100%;
@@ -91,7 +82,7 @@ header{
     }
     .search-button{
         border-radius: 0 2px 2px 0;
-        background: $primary-green url(https://res.cloudinary.com/sivadass/image/upload/v1494692031/icons/search.png) center no-repeat;
+        background: $primary-red url(https://res.cloudinary.com/sivadass/image/upload/v1494692031/icons/search.png) center no-repeat;
         width: 96px;
         @media (max-width: 480px){
             height: 32px;
@@ -135,7 +126,7 @@ header{
 }
 .cart-info table{
     font-size: 14px;
-    color: $primary-green;
+    color: $primary-red;
     text-align: right;
     tr{
         padding: 0;
@@ -151,7 +142,7 @@ header{
     z-index: 99;
     position: relative;
     .cart-img{
-      width: 35px; 
+      width: 35px;
     }
 }
 .cart-count{

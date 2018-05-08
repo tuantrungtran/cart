@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Header from './components/Header'
 import Products from './components/Products'
-import Footer from './components/Footer'
 import './scss/style.scss'
 
 class App extends Component {
@@ -15,13 +14,15 @@ class App extends Component {
     this.sumTotalAmount = this.sumTotalAmount.bind(this)
     this.updateQuantity = this.updateQuantity.bind(this)
     this.handleRemoveProduct = this.handleRemoveProduct.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
 
     this.state = {
       products: [],
       cart: [],
       quantity: 1,
       totalItems: 0,
-      totalAmount: 0
+      totalAmount: 0,
+      keySearch: ''
     }
   }
 
@@ -104,6 +105,12 @@ class App extends Component {
     e.preventDefault()
   }
 
+  handleSearch(e) {
+    this.setState({
+      keySearch: e.target.value
+    })
+  }
+
   render() {
     return(
       <div>
@@ -112,12 +119,14 @@ class App extends Component {
           totalItems={this.state.totalItems}
           totalAmount={this.state.totalAmount}
           removeProduct={this.handleRemoveProduct}
+          handleSearch={this.handleSearch}
         />
         <Products
           productsList={this.state.products}
           addToCart={this.handleAddToCart}
           productQuantity={this.state.quantity}
           updateQuantity={this.updateQuantity}
+          searchProduct={this.state.keySearch}
         />
       </div>
     )

@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import Product from './Product'
+import NoResult from '../empty/NoResult'
 // import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 class Products extends Component {
-  constructor(props){
-    super(props)
-  }
+  // constructor(props){
+  //   super(props)
+  // }
+
   render() {
     let productsData
-  	let term = this.props.searchTerm
-  	let x
-    productsData = this.props.productsList.map(product => {
+  	let searchKey = this.props.searchProduct
+    let s
+
+    function searchFor(search){
+      return s => {
+        return s.name.toLowerCase().includes(search.toLowerCase())
+      }
+    }
+
+    productsData = this.props.productsList.filter(searchFor(searchKey)).map(product => {
 			return(
 						<Product key={product.id} price={product.price} name={product.name} image={product.image}
               id={product.id} productQuantity={product.quantity} addToCart={this.props.addToCart}
@@ -19,10 +28,11 @@ class Products extends Component {
 			}
 		)
     let view;
-		if(productsData.length <= 0 && !term){
+
+		if(productsData.length <= 0 && !searchKey){
 			view = `Loading...`
-		} else if(productsData.length <= 0 && term){
-			view = `Not found`
+		} else if(productsData.length <= 0){
+			view = <NoResult />
 		} else{
 			view = productsData
 		}

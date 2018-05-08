@@ -33,12 +33,20 @@ class Counter extends Component {
     e.preventDefault()
   }
 
+  inputQty() {
+    this.setState({
+      value: this.refs.feedQty.value
+    },() => {
+      this.props.updateQuantity(this.state.value)
+    })
+  }
+
   render() {
     return (
 			<div className="stepper-input">
-				<a href="#" onClick={this.decrement} className="decrement">–</a>
-				<input type="number" value={this.state.value} className="quantity" />
-				<a href="#" onClick={this.increment} className="increment">+</a>
+				<a href="" onClick={this.decrement} className="decrement">–</a>
+				<input type="number" ref="feedQty" value={this.state.value} onChange={this.inputQty.bind(this)} className="quantity" />
+				<a href="" onClick={this.increment} className="increment">+</a>
 			</div>
 		)
   }
