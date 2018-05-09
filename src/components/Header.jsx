@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {findDOMNode} from 'react-dom';
+import React, {Component} from 'react'
+import {findDOMNode} from 'react-dom'
 import EmptyCart from '../empty/EmptyCart'
 import CartScrollBar from './CartScrollBar'
 
