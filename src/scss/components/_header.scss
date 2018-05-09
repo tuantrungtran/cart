@@ -69,7 +69,7 @@ header{
         height: 36px;
         border: 1px solid $primary-red;
         padding: 0 16px;
-        border-radius: 2px 0 0 2px;
+        // border-radius: 2px 0 0 2px;
         width: 100%;
         max-width: 330px;
         &:focus{
@@ -81,7 +81,7 @@ header{
         }
     }
     .search-button{
-        border-radius: 0 2px 2px 0;
+        // border-radius: 0 2px 2px 0;
         background: $primary-red url(https://res.cloudinary.com/sivadass/image/upload/v1494692031/icons/search.png) center no-repeat;
         width: 96px;
         @media (max-width: 480px){
@@ -91,20 +91,8 @@ header{
     }
 }
 @media (min-width: 481px){
-    .mobile-search,
     .back-button {
         display: none;
-    }
-}
-@media (max-width: 480px){
-    .mobile-search{
-        display: block;
-        height: 36px;
-        width: 36px;
-    }
-    .back-button{
-        display: block;
-        margin-right: 8px;
     }
 }
 
@@ -266,7 +254,7 @@ header{
     }
     .product-info{
         margin-left: 16px;
-        flex-grow: 1;
+        // flex-grow: 1;
         .product-name{
             color: $gray-light;
             font-size: 14px;
@@ -297,7 +285,7 @@ header{
 
     }
     .product-remove{
-        margin-left: 24px;
+        // margin-left: 24px;
         height: 24px;
         line-height: 24px;
         width: 24px;
@@ -311,34 +299,4 @@ header{
     &:hover{
         background: $green-light-bg;
     }
-}
-
-@keyframes tada {
-  from {
-    transform: scale3d(1, 1, 1);
-    opacity: 0;
-  }
-
-  10%, 20% {
-    transform: scale3d(.8, .66, .66) rotate3d(0, 0, 1, -3deg);
-  }
-
-  30%, 50%, 70%, 90% {
-    transform: scale3d(1.2, 1.2, 1.2) rotate3d(0, 0, 1, 3deg);
-  }
-
-  40%, 60%, 80% {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-    opacity: 1;
-  }
-}
-
-.tada {
-  animation-name: tada;
-  animation-duration: 300ms;
-  animation-fill-mode: both;
 }

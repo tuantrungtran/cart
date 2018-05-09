@@ -24,16 +24,10 @@
     }
     .product{
         min-height: 355px;
-        // flex-basis: calc(25% - 32px);
-        // -webkit-flex-basis: calc(25% - 32px);
         @media (max-width: 768px){
-            // flex-basis: calc(33% - 16px);
-            // -webkit-flex-basis: calc(33% - 16px);
             margin: 8px;
         }
         @media (max-width: 480px){
-            // flex-basis: calc(50% - 16px);
-            // -webkit-flex-basis: calc(50% - 16px);
             min-height: 313px;
             .product-name{
                 height: 20px;

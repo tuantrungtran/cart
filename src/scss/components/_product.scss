@@ -2,10 +2,8 @@
     background: $gray-black;
     margin: 16px;
     width: 200px;
-    border-radius: 2px;
     .product-image{
         overflow: hidden;
-        border-radius: 2px 2px 0 0;
         max-height: 200px;
         img{
             cursor:zoom-in;
@@ -38,7 +36,6 @@
     }
     .product-name,
     .product-price{
-        // color: $gray-medium;
         color: $white;
         padding: 0 16px;
         text-align: center;
@@ -93,7 +90,6 @@
         width: 48px;
         text-align: center;
         margin: 0 12px;
-        border-radius: 2px;
         border: 1px solid $gray-eighty;
         &:focus{
             outline: none;

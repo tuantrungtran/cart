@@ -24,6 +24,9 @@ class Product extends Component {
       }
     },() => {
       this.props.addToCart(this.state.selectedProduct)
+      this.setState({
+        quantity: 1
+      })
     })
   }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Product from './Product'
 import NoResult from '../empty/NoResult'
-// import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 class Products extends Component {
   // constructor(props){

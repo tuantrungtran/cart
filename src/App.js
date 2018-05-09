@@ -86,9 +86,12 @@ class App extends Component {
     })
   }
 
-  updateQuantity(qty) {
-    this.setState({
-      quantity: qty
+  updateQuantity(cart) {
+    this.setState(prevState => ({
+      cart: cart
+    }), () => {
+      this.sumTotalItems()
+      this.sumTotalAmount()
     })
   }
 
@@ -121,12 +124,12 @@ class App extends Component {
           totalAmount={this.state.totalAmount}
           removeProduct={this.handleRemoveProduct}
           handleSearch={this.handleSearch}
+          updateQuantity={this.updateQuantity}
         />
         <Products
           productsList={this.state.products}
           addToCart={this.handleAddToCart}
           productQuantity={this.state.quantity}
-          updateQuantity={this.updateQuantity}
           searchProduct={this.state.keySearch}
         />
       </div>
