@@ -11,7 +11,6 @@ class App extends Component {
 
     this.handleAddToCart = this.handleAddToCart.bind(this)
     this.checkProduct = this.checkProduct.bind(this)
-    this.sumTotalItems = this.sumTotalItems.bind(this)
     this.sumTotalAmount = this.sumTotalAmount.bind(this)
     this.updateQuantity = this.updateQuantity.bind(this)
     this.handleRemoveProduct = this.handleRemoveProduct.bind(this)
@@ -20,7 +19,6 @@ class App extends Component {
     this.state = {
       products: [],
       cart: [],
-      quantity: 1,
       totalItems: 0,
       totalAmount: 0,
       keySearch: ''
@@ -55,27 +53,21 @@ class App extends Component {
     this.setState({
       cart: cartItem
     },() => {
-      this.sumTotalItems()
       this.sumTotalAmount()
     })
   }
 
   sumTotalAmount() {
     let total = 0
+    let quantity = 0
     let cart = this.state.cart
     for (var i = 0; i < cart.length; i++) {
+      quantity += Number(cart[i].quantity);
       total += cart[i].price * Number(cart[i].quantity)
     }
-
     this.setState({
-      totalAmount: total
-    })
-  }
-
-  sumTotalItems() {
-    let total = this.state.cart.length || 0
-    this.setState({
-      totalItems: total
+      totalAmount: total,
+      totalItems: quantity
     })
   }
 
@@ -90,7 +82,6 @@ class App extends Component {
     this.setState(prevState => ({
       cart: cart
     }), () => {
-      this.sumTotalItems()
       this.sumTotalAmount()
     })
   }
@@ -103,7 +94,6 @@ class App extends Component {
       cart: cart
     })
 
-    this.sumTotalItems()
     this.sumTotalAmount()
 
     e.preventDefault()
@@ -129,7 +119,6 @@ class App extends Component {
         <Products
           productsList={this.state.products}
           addToCart={this.handleAddToCart}
-          productQuantity={this.state.quantity}
           searchProduct={this.state.keySearch}
         />
       </div>
